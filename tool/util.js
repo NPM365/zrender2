@@ -64,7 +64,7 @@ define(
         function mergeItem(target, source, key, overwrite) {
             if (source.hasOwnProperty(key)) {
                 var targetProp = target[key];
-                if (typeof targetProp == 'object'
+                if (typeof targetProp == 'object' && targetProp !== null
                     && !BUILTIN_OBJECT[objToString.call(targetProp)]
                     // 是否为 dom 对象
                     && !isDom(targetProp)
